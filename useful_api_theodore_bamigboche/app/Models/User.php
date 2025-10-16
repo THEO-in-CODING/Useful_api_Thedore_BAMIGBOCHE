@@ -9,14 +9,14 @@ class User extends Authenticatable
 {
     use HasApiTokens;
 
-    protected $fillable = ['name', 'email', 'password'];
-
+    protected $fillable = ['name', 'email', 'password', 'balance'];
     protected $hidden = ['password', 'remember_token'];
 
     public function userModules()
     {
         return $this->hasMany(UserModule::class);
     }
+
     public function shortLinks()
     {
         return $this->hasMany(ShortLink::class);
